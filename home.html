@@ -14,36 +14,39 @@
                 <img src="src/images/Logo@2x.png" alt="">
                 <img src="src/images/search@2x.png" alt="">
             </figure>
-            <span class="btn-red"><p>Popular</p></span>
-            <p>A-Z</p>
-            <p>Last Viewed</p>
+            <div class="tags-menu">
+                <span class="btn-red"><p class="titles">Popular</p></span>
+                <p class="titles">A-Z</p>
+                <p class="titles">Last Viewed</p>
+            </div>
         </nav>
-        <section class="list-characters" id="">
-            <div class="list-character-container">
-                <figure class="list-character-image">
-                    <img src="src/images/Wolverine.png" alt="">
-                </figure>
-                <div class="list-character-texts">
-                    <h1>Wolverine</h1>
-                    <p>James Howlett</p>
-                    <p>Is a fictional character appearing in American comic books published by Marvel ...</p>
-                    <div class="list-character-btnArrow">
-                        <p>More info</p>
-                        <img src="src/images/arrow.png" alt="">
+    </header>
+    <section class="list-characters" id="list-characters">
+                <div class="list-character-container">
+                    <figure class="list-character-image">
+                        <img src="src/images/Wolverine.png" alt="">
+                    </figure>
+                    <div class="list-character-texts">
+                        <h1 class="titles">Wolverine</h1>
+                        <p class="character-name">James Howlett</p>
+                        <p class="character-description">Is a fictional character appearing in American comic books published by Marvel ...</p>
+                        <div class="list-character-btnArrow">
+                            <p >More info</p>
+                            <img class="icon" src="src/images/arrow.png" alt="" onclick="modal()">
+                        </div>
                     </div>
-                </div>
                 </div>
                 <div class="list-character-container">
                     <figure class="list-character-image">
                         <img src="src/images/DeadPool.png" alt="">
                     </figure>
                     <div class="list-character-texts">
-                        <h1>Deadpool</h1>
-                        <p>Wade Wilson</p>
-                        <p>Is a fictional character appearing in American comic books published by Marvel ...</p>
+                        <h1 class="titles">Deadpool</h1>
+                        <p class="character-name">Wade Wilson</p>
+                        <p class="character-description">Is a fictional character appearing in American comic books published by Marvel ...</p>
                         <div class="list-character-btnArrow">
                             <p>More info</p>
-                            <img src="src/images/arrow.png" alt="">
+                            <img class="icon" src="src/images/arrow.png" alt="" onclick="modal()">
                         </div>
                     </div>
                 </div>
@@ -52,17 +55,29 @@
                             <img src="src/images/Silver Surfer.png" alt="">
                         </figure>
                         <div class="list-character-texts">
-                            <h1>Silver Surfer</h1>
-                            <p>Norrin Radd</p>
-                            <p>Is a fictional character appearing in American comic books published by Marvel ...</p>
+                            <h1 class="titles">Silver Surfer</h1>
+                            <p class="character-name">Norrin Radd</p>
+                            <p class="character-description">Is a fictional character appearing in American comic books published by Marvel ...</p>
                             <div class="list-character-btnArrow">
                                 <p>More info</p>
-                                <img src="src/images/arrow.png" alt="">
+                                <img class="icon" src="src/images/arrow.png" alt="">
                             </div>
                         </div>
                 </div>
         </section>
-    </header>
+        <section class="modal" id="modal">
+                <header class="modal-header">
+                        <!-- <img src="src/images/Bitmap@2x.png" alt=""> -->
+                </header>
+                <div class="modal-container">
+                     <div class="modal-titles">
+                        <h1 class="titles">Captain Marvel</h1>
+                        <img class="icon"src="src/images/ic_chare@2x.png" alt="">
+                     </div>
+                     <span>Carol Danvers</span>
+                     <p>Carol Susan Jane Danvers is a fictional superhero appearing in American comic books published by Marvel Comics. Created by writer Roy Thomas and artist Gene Colan, Danvers first appeared as an officer in the United States Air Force and a colleague of the Kree superhero Mar-Vell in Marvel Super-Heroes #13 (March 1968) and later became the first incarnation of Ms. Marvel in Ms. Marvel #1 (cover-dated January 1977) after her DNA was fused with Mar-Vell's during an explosion</p>
+                </div>
+        </section>
 </body>
 <script src="src/js/home.js"></script>
 </html>

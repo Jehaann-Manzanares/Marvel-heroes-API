@@ -1,0 +1,177 @@
+
+:root{
+    --colorRed:#F70D0C; 
+}
+@font-face {
+    font-family: 'SF UI Text Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF UI Text Light'), url('../fonts/SFUIText-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'SF UI Text Heavy';
+    font-style: normal;
+    font-weight: normal;
+    src: local('SF UI Text Heavy'), url('../fonts/SFUIText-Heavy.woff') format('woff');
+}
+
+body, figure, p, h1{
+    margin: 0
+}
+.titles{
+    font-family: 'SF UI Text Heavy'
+}
+.texts, body{
+    font-family: 'SF UI Text Light'
+}
+
+@media screen and (min-width:320px){
+    /* ---------------------------
+            HEADER
+     ----------------------------*/
+    .menu{
+        margin: 1.25em
+    }
+    .menu-container{
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        margin-bottom: 2em
+    }
+    .tags-menu{
+        display: flex;
+        align-items: center;
+        font-size: 1em
+    }
+
+    .tags-menu p,.tags-menu span{
+        display: flex;
+        margin-right: 1.25em
+    }
+
+    .btn-red{
+        background: var(--colorRed);
+        color: white;
+        border-radius: 14px;
+        padding: 15px 13px;
+        text-align: center
+    }
+    .btn-red p{
+        margin: 0
+    }
+    /* ---------------------------
+            END HEADER
+     ----------------------------*/
+     /* ---------------------------
+            LIST CHARACTERS
+     ----------------------------*/
+    .list-characters{
+        margin: 1.25em;
+    }
+    .list-character-container{
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-areas: 'list-character-image list-character-texts';
+        border-radius: 15px;
+        overflow: hidden;
+        margin-bottom: 1em;
+        box-shadow: 0 10px 30px grey
+        
+    }
+    .list-character-image{
+        
+        grid-area: list-character-image;
+        overflow: hidden;
+        
+        
+    }
+    .list-character-image img{
+        height: 100%;
+        
+        
+    }
+    .list-character-texts{
+        grid-area: list-character-texts;
+        /* top right bottom left*/
+        margin: 1em  1.6em 0.7em .7em;
+    }
+    .list-character-texts h1{
+        font-size: 1.2em;
+        margin-top: 0;
+        margin-bottom: 5px
+        
+    }
+    .list-character-texts p{
+        font-size: .7em;
+        
+    }
+    .list-character-texts .character-name{
+        margin-bottom: 16px
+    }
+
+    .list-character-texts{
+        margin-bottom: 16px
+    }
+    .character-description{
+        margin-bottom: 64px
+    }
+    .list-character-btnArrow{
+        display: flex;
+        justify-content: space-between
+     }
+    .list-character-btnArrow img{
+       
+       cursor: pointer;
+       transition: .1s
+    }
+    .icon{
+        width: auto;
+        height: 1em;
+    }
+    .list-character-btnArrow img:active{
+        border-style: none;
+        height: 1.2em;
+        
+     }
+    .list-character-btnArrow p{
+        font-size: .8em;
+        font-weight: bold
+     }
+     /* ---------------------------
+           END LIST CHARACTERS
+     ----------------------------*/
+     /* ---------------------------
+           MODAL
+     ----------------------------*/
+     .modal{
+     
+     border-radius: 30px;
+     overflow: hidden
+     }
+     .modal-header{
+         width: 100%;
+         height:400px;
+         background-size: cover;
+         background-image: url('../images/Bitmap@2x.png');
+         background-repeat: no-repeat
+     }
+     .modal-container{
+        margin: 1.25em; 
+     }
+     .modal-titles{
+         display: flex;
+         align-items: center;
+         justify-content: space-between
+     }
+     .modal-container p{
+        margin-top: 1.3em 
+     }
+
+     /* */
+     /* ---------------------------
+           END MODAL
+     ----------------------------*/
+
+
+}

@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Marvel Heroes Library</title>
+    <title>Marvel Heroes</title>
     <link rel="stylesheet" href="src/css/home.css">
+    <link rel="stylesheet" href="src/css/animations.css">
 </head>
 <body>
     <header>
@@ -60,24 +61,25 @@
                             <p class="character-description">Is a fictional character appearing in American comic books published by Marvel ...</p>
                             <div class="list-character-btnArrow">
                                 <p>More info</p>
-                                <img class="icon" src="src/images/arrow.png" alt="">
+                                <img class="icon" src="src/images/arrow.png" alt="" onclick="modal()">
                             </div>
                         </div>
                 </div>
         </section>
-        <section class="modal" id="modal">
-                <header class="modal-header">
-                        <!-- <img src="src/images/Bitmap@2x.png" alt=""> -->
-                </header>
-                <div class="modal-container">
-                     <div class="modal-titles">
-                        <h1 class="titles">Captain Marvel</h1>
-                        <img class="icon"src="src/images/ic_chare@2x.png" alt="">
-                     </div>
-                     <span>Carol Danvers</span>
-                     <p>Carol Susan Jane Danvers is a fictional superhero appearing in American comic books published by Marvel Comics. Created by writer Roy Thomas and artist Gene Colan, Danvers first appeared as an officer in the United States Air Force and a colleague of the Kree superhero Mar-Vell in Marvel Super-Heroes #13 (March 1968) and later became the first incarnation of Ms. Marvel in Ms. Marvel #1 (cover-dated January 1977) after her DNA was fused with Mar-Vell's during an explosion</p>
-                </div>
-        </section>
+        <div class="overlay" id="overlay">
+            <section class="modal" id="modal">
+                    <div class="modal-header">                         
+                    </div>
+                    <div class="modal-container">
+                        <div class="modal-titles">
+                            <h1 class="titles">Captain Marvel</h1>
+                            <img class="icon"src="src/images/ic_chare@2x.png" alt="">
+                        </div>
+                        <span>Carol Danvers</span>
+                        <p>Carol Susan Jane Danvers is a fictional superhero appearing in American comic books published by Marvel Comics. Created by writer Roy Thomas and artist Gene Colan, Danvers first appeared as an officer in the United States Air Force and a colleague of the Kree superhero Mar-Vell in Marvel Super-Heroes #13 (March 1968) and later became the first incarnation of Ms. Marvel in Ms. Marvel #1 (cover-dated January 1977) after her DNA was fused with Mar-Vell's during an explosion</p>
+                    </div>
+            </section>
+        </div>
 </body>
 <script src="src/js/home.js"></script>
 </html>

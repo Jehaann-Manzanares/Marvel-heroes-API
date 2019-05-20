@@ -17,7 +17,8 @@
 }
 
 body, figure, p, h1{
-    margin: 0
+    margin: 0;
+    
 }
 .titles{
     font-family: 'SF UI Text Heavy'
@@ -147,8 +148,18 @@ body, figure, p, h1{
      .modal{
      
      border-radius: 30px;
-     overflow: hidden
+     margin-top: 3em;
+     overflow: hidden;
+     background: white
+     
      }
+
+     .modal.active{
+      animation-name: fadeInBottom;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+        
+    }
      .modal-header{
          width: 100%;
          height:400px;
@@ -157,7 +168,8 @@ body, figure, p, h1{
          background-repeat: no-repeat
      }
      .modal-container{
-        margin: 1.25em; 
+        margin: 1.25em;
+        overflow: scroll; 
      }
      .modal-titles{
          display: flex;
@@ -168,7 +180,25 @@ body, figure, p, h1{
         margin-top: 1.3em 
      }
 
-     /* */
+     /* Overlay*/
+     .overlay{
+         background: rgba(0, 0, 0, 0.8);
+         position: fixed;
+         left: 0;
+         right: 0;
+         top: 0;
+         bottom: 0;
+         opacity: 0; 
+         visibility: hidden;
+         transition: .3s ease;
+         animation-delay: 1s
+         
+     }
+
+     .overlay.active{
+        opacity: 1;
+        visibility: visible
+     }
      /* ---------------------------
            END MODAL
      ----------------------------*/

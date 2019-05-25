@@ -148,7 +148,7 @@ body, figure, p, h1{
      .modal{
      
      border-radius: 30px;
-     margin-top: 3em;
+     margin-top: 1.5em;
      overflow: hidden;
      background: white
      
@@ -162,7 +162,7 @@ body, figure, p, h1{
     }
      .modal-header{
          width: 100%;
-         height:400px;
+         height:350px;
          background-size: cover;
          background-image: url('../images/Bitmap@2x.png');
          background-repeat: no-repeat
@@ -177,7 +177,10 @@ body, figure, p, h1{
          justify-content: space-between
      }
      .modal-container p{
-        margin-top: 1.3em 
+        margin-top: 1.3em;
+        width: 100%;
+        height: 20em;
+        overflow: auto;
      }
 
      /* Overlay*/

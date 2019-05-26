@@ -77,25 +77,52 @@ body, figure, p, h1{
         border-radius: 15px;
         overflow: hidden;
         margin-bottom: 1em;
-        box-shadow: 0 10px 30px grey
+        box-shadow: 0 10px 30px grey;
+        min-height: 220px;
+        max-height: 250px;
         
     }
     .list-character-image{
         
         grid-area: list-character-image;
         overflow: hidden;
-        
-        
+                
     }
+
     .list-character-image img{
-        height: 100%;
+        
+        width: auto;
+        max-height: 100%;
         
         
     }
+    
     .list-character-texts{
         grid-area: list-character-texts;
         /* top right bottom left*/
         margin: 1em  1.6em 0.7em .7em;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 'header-card'
+                             'body-text'
+                             'list-character-btnArrow';
+    }
+    .header-card{
+        grid-area: header-card;
+        margin-bottom: 16px
+    }
+
+    .body-text{
+        grid-area: body-text;
+        margin-bottom: 2em;
+        
+    }
+    .character-description{
+        height: 1fr;
+        overflow: auto
+    }
+    .list-character-btnArrow{
+        grid-area: list-character-btnArrow;
     }
     .list-character-texts h1{
         font-size: 1.2em;
@@ -107,16 +134,12 @@ body, figure, p, h1{
         font-size: .7em;
         
     }
-    .list-character-texts .character-name{
-        margin-bottom: 16px
-    }
+    
 
     .list-character-texts{
         margin-bottom: 16px
     }
-    .character-description{
-        margin-bottom: 64px
-    }
+    
     .list-character-btnArrow{
         display: flex;
         justify-content: space-between
@@ -148,7 +171,7 @@ body, figure, p, h1{
      .modal{
      
      border-radius: 30px;
-     margin-top: 1.5em;
+     /* margin-top: 1.5em; */
      overflow: hidden;
      background: white
      
@@ -162,14 +185,14 @@ body, figure, p, h1{
     }
      .modal-header{
          width: 100%;
-         height:350px;
+         height:300px;
          background-size: cover;
          background-image: url('../images/Bitmap@2x.png');
          background-repeat: no-repeat
      }
      .modal-container{
         margin: 1.25em;
-        overflow: scroll; 
+        
      }
      .modal-titles{
          display: flex;
@@ -181,6 +204,7 @@ body, figure, p, h1{
         width: 100%;
         height: 20em;
         overflow: auto;
+        
      }
 
      /* Overlay*/

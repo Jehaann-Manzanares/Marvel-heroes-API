@@ -1,54 +1,72 @@
-const $overlay = document.getElementById('overlay')
-const $modal = document.getElementById('modal')
+const $overlay = document.getElementById("overlay");
+const $modal = document.getElementById("modal");
 
-function modal(){
-    
-    
-    $overlay.classList.add('active')
-    // $modal.classList.add('active')
-    $modal.style.animation = 'fadeInBottom 1s forwards'
-    
-    
+function modal() {
+  $overlay.classList.add("active");
+  // $modal.classList.add('active')
+  $modal.style.animation = "fadeInBottom 1s forwards";
 }
 
+$overlay.addEventListener("click", () => {
+  $modal.style.animation = "fadeOutBottom 1s forwards";
+  $overlay.style.transitionDelay = "1s";
+  $overlay.classList.remove("active");
+});
 
-$overlay.addEventListener('click', () => {
-    
-    $modal.style.animation = 'fadeOutBottom 1s forwards'
-    $overlay.style.transitionDelay = '1s';
-    $overlay.classList.remove('active')
-})
+async function load() {
+  const $listCharacters = document.getElementById("listCharacters");
+  const $modalHeader = document.getElementById("modalHeader");
+  const $modalTitle = document.getElementById("modalTitle");
+  const $modalDescription = document.getElementById("modalDescription");
 
+  async function getDataCharacters(url) {
+    const response = await fetch(url);
+    const data = await response.json();
 
-async function load(){
+    return data;
+  }
 
-const $listCharacters = document.getElementById('listCharacters')
-
-async function getDataCharacters(url){
-
-    const response = await fetch(url)
-    const data = await response.json()
-
-    return data
-}
-
-function renderCharactersList(list, $container){
-
+  function renderCharactersList(list, $container) {
     list.forEach(Character => {
-         const HTMLString = CharactersTemplate(Character)
-         const CharacterElement = createTemplate(HTMLString)
+      const HTMLString = CharactersTemplate(Character);
+      const CharacterElement = createTemplate(HTMLString);
 
-         $container.append(CharacterElement)
+      $container.append(CharacterElement);
+
+      addEventClick(CharacterElement);
     });
-}
+  }
 
-function CharactersTemplate(Character){
-    const description = cutText(Character.description)
-    return(
-        `
-        <section class="list-character-container">
+  function addEventClick($element) {
+    $element.addEventListener("click", event => {
+      showModal($element);
+    });
+  }
+
+  function showModal($element) {
+    $overlay.classList.add("active");
+    $modal.style.animation = "fadeInBottom 1s forwards";
+
+    const id = $element.dataset.id;
+    const data = findCharter(Characters, id);
+
+    // $modalHeader.style.backgroundImage(`${data.thumbnail.path}.${data.thumbnail.extension}`)
+    $modalTitle.textContent = data.name;
+    $modalDescription.textContent = data.description;
+  }
+
+  function findCharter(list, id) {
+    return list.find(Characters => Characters.id === parseInt(id, 10));
+  }
+
+  function CharactersTemplate(Character) {
+    const description = cutText(Character.description);
+    return `
+        <section class="list-character-container" data-id="${Character.id}">
                     <figure class="list-character-image">
-                        <img src="${Character.thumbnail.path}.${Character.thumbnail.extension}" alt="">
+                        <img src="${Character.thumbnail.path}.${
+      Character.thumbnail.extension
+    }" alt="">
                     </figure>
                     <div class="list-character-texts">
                         <header class="header-card">
@@ -64,24 +82,25 @@ function CharactersTemplate(Character){
                         </footer>
                     </div>
         </section>
-        `
-    )
-}
-function cutText(text){
-    return text.substring(0,130)
-}
-function createTemplate(HTMLStrig){
-    const html = document.implementation.createHTMLDocument()
-    html.body.innerHTML = HTMLStrig
-    
-    return html.body.children[0]
+        `;
+  }
+  function cutText(text) {
+    return text.substring(0, 130);
+  }
+  function createTemplate(HTMLStrig) {
+    const html = document.implementation.createHTMLDocument();
+    html.body.innerHTML = HTMLStrig;
+
+    return html.body.children[0];
+  }
+
+  const URL_API =
+    "https://gateway.marvel.com:443/v1/public/characters?&limit=10&apikey=5e0b7a3b8c23938b449a5da5f3584ca9";
+
+  const {
+    data: { results: Characters }
+  } = await getDataCharacters(URL_API);
+  renderCharactersList(Characters, $listCharacters);
 }
 
-const URL_API = 'https://gateway.marvel.com:443/v1/public/characters?&limit=10&apikey=5e0b7a3b8c23938b449a5da5f3584ca9'
-
-const {data: {results : Characters} } = await getDataCharacters(URL_API)
-renderCharactersList(Characters,$listCharacters)
-
-}
-
-load()
+load();

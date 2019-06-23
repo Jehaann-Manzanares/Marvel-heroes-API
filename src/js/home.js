@@ -1,6 +1,8 @@
 const $overlay = document.getElementById("overlay");
 const $modal = document.getElementById("modal");
-
+const $btn_search = document.getElementById("btn_search");
+const $formSearch = document.getElementById("formSearch");
+const $logo = document.getElementById("logo");
 function modal() {
   $overlay.classList.add("active");
   // $modal.classList.add('active')
@@ -13,9 +15,14 @@ $overlay.addEventListener("click", () => {
   $overlay.classList.remove("active");
 });
 
+$btn_search.addEventListener("click", () => {
+  $formSearch.classList.toggle("active");
+  $logo.classList.toggle("Inactive");
+});
+
 async function load() {
   const $listCharacters = document.getElementById("listCharacters");
-  const $modalHeader = document.getElementById("modalHeader");
+  const $modalImage = document.getElementById("modalImage");
   const $modalTitle = document.getElementById("modalTitle");
   const $modalDescription = document.getElementById("modalDescription");
 
@@ -50,7 +57,9 @@ async function load() {
     const id = $element.dataset.id;
     const data = findCharter(Characters, id);
 
-    // $modalHeader.style.backgroundImage(`${data.thumbnail.path}.${data.thumbnail.extension}`)
+    const imageUnificada = `${data.thumbnail.path}.${data.thumbnail.extension}`;
+
+    $modalImage.setAttribute("src", imageUnificada);
     $modalTitle.textContent = data.name;
     $modalDescription.textContent = data.description;
   }

@@ -1,33 +1,104 @@
-@keyframes fadeInBottom{
-    from{
-        transform: translateY(3000px)
-    }
-    60%{
-        transform: translateY(25px)
-    }
-    75%{
-        transform: translateY(-10px)
-    }
-    90%{
-        transform: translateY(5px)
-    }
-    to{
-        transform: translateY(0)
-    }
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(150px);
+  }
+  60% {
+    transform: translateX(25px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  90% {
+    transform: translateX(5px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes fadeOutLeft {
+  from {
+    transform: translateX(0);
+  }
+  60% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+  90% {
+    transform: translateX(25px);
+  }
+  to {
+    transform: translateX(250px);
+  }
 }
 
-@keyframes fadeOutBottom{
-    from{
-        transform: translateY(5px)
-    }
-    
-    60%{
-        transform: translateY(-10px)
-    }
-    75%{
-        transform: translateY(25px)
-    }
-    to{
-        transform: translateY(3000px)
-    }
+@keyframes fadeOutRight {
+  from {
+    transform: translateX(0);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  90% {
+    transform: translateX(-25px);
+  }
+  to {
+    transform: translateX(-250px);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    transform: translateX(-150px);
+  }
+  60% {
+    transform: translateX(-25px);
+  }
+  75% {
+    transform: translateX(-10px);
+  }
+  90% {
+    transform: translateX(-5px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInBottom {
+  from {
+    transform: translateY(3000px);
+  }
+  60% {
+    transform: translateY(25px);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  90% {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOutBottom {
+  from {
+    transform: translateY(5px);
+  }
+
+  60% {
+    transform: translateY(-10px);
+  }
+  75% {
+    transform: translateY(25px);
+  }
+  to {
+    transform: translateY(3000px);
+  }
 }

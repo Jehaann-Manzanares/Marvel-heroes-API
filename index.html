@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Marvel Heroes</title>
-    <link rel="stylesheet" href="src/css/home.css">
-    <link rel="stylesheet" href="src/css/animations.css">
-</head>
-<body>
+    <link rel="stylesheet" href="src/css/home.css" />
+    <link rel="stylesheet" href="src/css/animations.css" />
+  </head>
+  <body>
     <header>
-        <nav class="menu">
-            <figure class="menu-container" id="menu-container">
-                <img src="src/images/Logo@2x.png" alt="">
-                <img src="src/images/search@2x.png" alt="">
-            </figure>
-            <div class="tags-menu">
-                <span class="btn-red"><p class="titles">Popular</p></span>
-                <p class="titles">A-Z</p>
-                <p class="titles">Last Viewed</p>
-            </div>
-        </nav>
+      <nav class="menu">
+        <figure class="menu-container" id="menu-container">
+          <img src="src/images/Logo@2x.png" alt="" id="logo" />
+          <form action="">
+            <input
+              type="text"
+              name="name"
+              placeholder="Search character"
+              id="formSearch"
+            />
+          </form>
+          <img src="src/images/search@2x.png" alt="" id="btn_search" />
+        </figure>
+        <div class="tags-menu">
+          <span class="btn-red"><p class="titles">Popular</p></span>
+          <p class="titles">A-Z</p>
+          <p class="titles">Last Viewed</p>
+        </div>
+      </nav>
     </header>
     <section class="list-characters" id="listCharacters">
-                
-               <!--  <div class="list-character-container">
+      <!--  <div class="list-character-container">
                     <figure class="list-character-image">
                         <img src="src/images/DeadPool.png" alt="">
                     </figure>
@@ -38,7 +45,7 @@
                         </div>
                     </div>
                 </div> -->
-                <!-- <div class="list-character-container">
+      <!-- <div class="list-character-container">
                         <figure class="list-character-image">
                             <img src="src/images/Silver Surfer.png" alt="">
                         </figure>
@@ -52,29 +59,32 @@
                             </div>
                         </div>
                 </div> -->
-        </section>
-        <div class="overlay" id="overlay">
-            <section class="modal" id="modal" >
-                    <div class="modal-header" id="modalHeader">                         
-                    </div>
-                    <div class="modal-container">
-                        <div class="modal-titles">
-                            <h1 class="titles" id="modalTitle">Captain Marvel</h1>
-                            <img class="icon"src="src/images/ic_chare@2x.png" alt="">
-                        </div>
-                        <!-- <span>Carol Danvers</span> -->
-                        <p id="modalDescription">Carol Susan Jane Danvers is a fictional superhero appearing in American comic books published by Marvel Comics. 
-                            Created by writer Roy Thomas and artist Gene Colan, Danvers first appeared as an officer in the United States 
-                            Air Force and a colleague of the Kree superhero Mar-Vell in Marvel Super-Heroes #13 (March 1968) and later 
-                            became the first incarnation of Ms. Marvel in Ms. Marvel #1 (cover-dated January 1977) after her DNA was fused 
-                            with Mar-Vell's during an explosion
-                            <br><br><br><br><br><br><br><br><br><br><br><br>
-
-                        </p>
-                        
-                    </div>
-            </section>
+    </section>
+    <div class="overlay" id="overlay">
+      <section class="modal" id="modal">
+        <div class="modal-header" id="modalHeader">
+          <img src="" alt="" id="modalImage" />
         </div>
-</body>
-<script src="src/js/home.js"></script>
+        <div class="modal-container">
+          <div class="modal-titles">
+            <h1 class="titles" id="modalTitle">Captain Marvel</h1>
+            <img class="icon" src="src/images/ic_chare@2x.png" alt="" />
+          </div>
+          <!-- <span>Carol Danvers</span> -->
+          <p id="modalDescription">
+            Carol Susan Jane Danvers is a fictional superhero appearing in
+            American comic books published by Marvel Comics. Created by writer
+            Roy Thomas and artist Gene Colan, Danvers first appeared as an
+            officer in the United States Air Force and a colleague of the Kree
+            superhero Mar-Vell in Marvel Super-Heroes #13 (March 1968) and later
+            became the first incarnation of Ms. Marvel in Ms. Marvel #1
+            (cover-dated January 1977) after her DNA was fused with Mar-Vell's
+            during an explosion
+            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
+  <script src="src/js/home.js"></script>
 </html>

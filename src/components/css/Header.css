@@ -1,0 +1,68 @@
+#logo {
+  display: block;
+  animation: fadeInRight 1s forwards;
+}
+#logo.Inactive {
+  display: none;
+}
+form input {
+  padding: 0.3em 2.5em;
+  border-radius: 5px;
+  border: none;
+  border-bottom: 1px solid grey;
+  font-family: "SF UI Text Light";
+  animation: fadeOutLeft 1s forwards;
+  display: none;
+}
+
+form input:focus {
+  /* border: solid 1px grey; */
+  outline: 0;
+}
+form input.active {
+  display: block;
+  animation-name: fadeInLeft;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+form input.Inactive {
+  animation-name: fadeOutRight;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  /* display: none; */
+}
+#btn_search {
+  z-index: 2;
+}
+.menu {
+  margin: 1.25em;
+}
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  margin-bottom: 2em;
+}
+.tags-menu {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+}
+
+.tags-menu p,
+.tags-menu span {
+  display: flex;
+  margin-right: 1.25em;
+}
+
+.btn-red {
+  background: var(--colorRed);
+  color: white;
+  border-radius: 14px;
+  padding: 15px 13px;
+  text-align: center;
+}
+.btn-red p {
+  margin: 0;
+}
